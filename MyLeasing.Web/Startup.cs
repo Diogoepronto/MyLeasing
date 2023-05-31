@@ -30,6 +30,8 @@ namespace MyLeasing.Web
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddTransient<SeedDB>();
+
             services.AddControllersWithViews();
         }
 
