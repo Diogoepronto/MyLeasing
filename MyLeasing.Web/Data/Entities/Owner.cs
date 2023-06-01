@@ -23,9 +23,11 @@ namespace MyLeasing.Web.Data.Entities
         [Display(Name = "Cell Phone")]
         public string CellPhone { get; set; }
 
-        [Required]
         public string Address { get; set; }
 
         public User User { get; set; }
+
+        [Display(Name = "Owner Name")]
+        public string OwnerName => $"{FirstName} {LastName}";
     }
 }
