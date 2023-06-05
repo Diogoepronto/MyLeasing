@@ -25,9 +25,23 @@ namespace MyLeasing.Web.Data.Entities
 
         public string Address { get; set; }
 
+        [Display(Name = "Profile Picture")]
+        public string ProfilePictureUrl { get; set; }
         public User User { get; set; }
 
         [Display(Name = "Owner Name")]
         public string OwnerName => $"{FirstName} {LastName}";
+
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ProfilePictureUrl))
+                {
+                    return null;
+                }
+                return $"https://localhost:44329//{ProfilePictureUrl.Substring(1)}";
+            }
+        }
     }
 }

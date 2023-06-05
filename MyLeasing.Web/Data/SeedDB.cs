@@ -49,16 +49,16 @@ namespace MyLeasing.Web.Data
 
             if (!_context.Owners.Any())
             {
-                AddOwner("Courtney", "Kramer", "3902 Douglas Dairy Road", user);
-                AddOwner("Luana", "Silva Cardoso", "Rua Heróis Ultramar 26", user);
-                AddOwner("Emily", "Araujo Dias", "R Cimo Vila 76", user);
-                AddOwner("Carlos", "Barros Souza", "R Miguel Bombarda 50", user);
-                AddOwner("Igor", "Pereira Sousa", "R Pescador Bacalhoeiro 35", user);
-                AddOwner("Eduardo", "Pinto Almeida", "R Parque Gondarim 76", user);
-                AddOwner("Sarah", "Melo Goncalves", "Rua Marco Simões 109", user);
-                AddOwner("Eduarda", "Dias Costa", "R Tradição 28", user);
-                AddOwner("Matheus", "Martins Souza", "R Poeta João Ruiz 88", user);
-                AddOwner("Diogo", "Sousa Barbosa", "R Outeirô 85", user);
+                AddOwner("Courtney", "Kramer",         "3902 Douglas Dairy Road",   user);
+                AddOwner("Luana",    "Silva Cardoso",  "Rua Heróis Ultramar 26",    user);
+                AddOwner("Emily",    "Araujo Dias",    "R Cimo Vila 76",            user);
+                AddOwner("Carlos",   "Barros Souza",   "R Miguel Bombarda 50",      user);
+                AddOwner("Igor",     "Pereira Sousa",  "R Pescador Bacalhoeiro 35", user);
+                AddOwner("Eduardo",  "Pinto Almeida",  "R Parque Gondarim 76",      user);
+                AddOwner("Sarah",    "Melo Goncalves", "Rua Marco Simões 109",      user);
+                AddOwner("Eduarda",  "Dias Costa",     "R Tradição 28",             user);
+                AddOwner("Matheus",  "Martins Souza",  "R Poeta João Ruiz 88",      user);
+                AddOwner("Diogo",    "Sousa Barbosa",  "R Outeirô 85",              user);
 
                 await _context.SaveChangesAsync();
             }
