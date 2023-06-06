@@ -49,22 +49,33 @@ namespace MyLeasing.Web.Data
 
             if (!_context.Owners.Any())
             {
-                AddOwner("Courtney", "Kramer",         "3902 Douglas Dairy Road",   user);
-                AddOwner("Luana",    "Silva Cardoso",  "Rua Heróis Ultramar 26",    user);
-                AddOwner("Emily",    "Araujo Dias",    "R Cimo Vila 76",            user);
-                AddOwner("Carlos",   "Barros Souza",   "R Miguel Bombarda 50",      user);
-                AddOwner("Igor",     "Pereira Sousa",  "R Pescador Bacalhoeiro 35", user);
-                AddOwner("Eduardo",  "Pinto Almeida",  "R Parque Gondarim 76",      user);
-                AddOwner("Sarah",    "Melo Goncalves", "Rua Marco Simões 109",      user);
-                AddOwner("Eduarda",  "Dias Costa",     "R Tradição 28",             user);
-                AddOwner("Matheus",  "Martins Souza",  "R Poeta João Ruiz 88",      user);
-                AddOwner("Diogo",    "Sousa Barbosa",  "R Outeirô 85",              user);
+                AddOwner("Carlos",   "Barros Souza",   "R Miguel Bombarda 50",      "~/images/owners/1.jpeg",  user);
+                AddOwner("Igor",     "Pereira Sousa",  "R Pescador Bacalhoeiro 35", "~/images/owners/2.jpeg",  user);
+                AddOwner("Eduardo",  "Pinto Almeida",  "R Parque Gondarim 76",      "~/images/owners/3.jpeg",  user);
+                AddOwner("Matheus",  "Martins Souza",  "R Poeta João Ruiz 88",      "~/images/owners/4.jpeg",  user);
+                AddOwner("Diogo",    "Sousa Barbosa",  "R Outeirô 85",              "~/images/owners/5.jpeg",  user);
+                AddOwner("Courtney", "Kramer",         "3902 Douglas Dairy Road",   "~/images/owners/6.jpeg",  user);
+                AddOwner("Luana",    "Silva Cardoso",  "Rua Heróis Ultramar 26",    "~/images/owners/7.jpeg",  user);
+                AddOwner("Emily",    "Araujo Dias",    "R Cimo Vila 76",            "~/images/owners/8.jpeg",  user);
+                AddOwner("Sarah",    "Melo Goncalves", "Rua Marco Simões 109",      "~/images/owners/9.jpeg",  user);
+                AddOwner("Eduarda",  "Dias Costa",     "R Tradição 28",             "~/images/owners/10.jpeg", user);
+
+                await _context.SaveChangesAsync();
+            }
+
+            if (!_context.Lessees.Any())
+            {
+                AddLessee("Pedro",  "Ferreira Gomes",   "R Riamar 50",       "~/images/lessees/1.jpeg", user);
+                AddLessee("Tomás",  "Martins Souza",    "Rua Longuinha 116", "~/images/lessees/2.jpeg", user);
+                AddLessee("Martim", "Santos Barbosa",   "R Cimo Vila 76",    "~/images/lessees/3.jpeg", user);
+                AddLessee("Laura",  "Correia Pinto",    "Quinta Lama 39",    "~/images/lessees/4.jpeg", user);
+                AddLessee("Bianca", "Ferreira Azevedo", "R Armazéns 97",     "~/images/lessees/5.jpeg", user);                
 
                 await _context.SaveChangesAsync();
             }
         }
 
-        private void AddOwner(string firstName, string lastName, string address, User user)
+        private void AddOwner(string firstName, string lastName, string address, string photoUrl, User user)
         {
             _context.Owners.Add(new Entities.Owner
             {
@@ -74,6 +85,22 @@ namespace MyLeasing.Web.Data
                 FixedPhone = _random.Next(800000000, 999999999).ToString(),
                 CellPhone = _random.Next(800000000, 999999999).ToString(),
                 Address = address,
+                PhotoUrl = photoUrl,
+                User = user
+            });
+        }
+
+        private void AddLessee(string firstName, string lastName, string address, string photoUrl, User user)
+        {
+            _context.Lessees.Add(new Entities.Lessee
+            {
+                Document = _random.Next(10000000, 99999999),
+                FirstName = firstName,
+                LastName = lastName,
+                FixedPhone = _random.Next(800000000, 999999999).ToString(),
+                CellPhone = _random.Next(800000000, 999999999).ToString(),
+                Address = address,
+                PhotoUrl = photoUrl,
                 User = user
             });
         }
