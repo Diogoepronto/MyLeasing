@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyLeasing.Web.Data;
-using MyLeasing.Web.Data.Entities;
 using MyLeasing.Web.Helpers;
 using MyLeasing.Web.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MyLeasing.Web.Controllers
 {
@@ -17,7 +16,7 @@ namespace MyLeasing.Web.Controllers
         private readonly IConverterHelper _converterHelper;
 
         public OwnersController(
-            IOwnerRepository ownerRepository, 
+            IOwnerRepository ownerRepository,
             IUserHelper userHelper,
             IImageHelper imageHelper,
             IConverterHelper converterHelper)
@@ -68,9 +67,9 @@ namespace MyLeasing.Web.Controllers
             {
                 var path = string.Empty;
 
-                if(model.ProfilePicture != null && model.ProfilePicture.Length > 0)
+                if (model.Photo != null && model.Photo.Length > 0)
                 {
-                    path = await _imageHelper.UploadImageAsync(model.ProfilePicture, "owners");
+                    path = await _imageHelper.UploadImageAsync(model.Photo, "owners");
                 }
 
                 var owner = _converterHelper.ToOwner(model, path, true);
@@ -113,11 +112,11 @@ namespace MyLeasing.Web.Controllers
             {
                 try
                 {
-                    var path = model.ProfilePictureUrl;
+                    var path = model.PhotoUrl;
 
-                    if(model.ProfilePicture != null && model.ProfilePicture.Length > 0)
+                    if (model.Photo != null && model.Photo.Length > 0)
                     {
-                        path = await _imageHelper.UploadImageAsync(model.ProfilePicture, "owners");
+                        path = await _imageHelper.UploadImageAsync(model.Photo, "owners");
                     }
 
                     var owner = _converterHelper.ToOwner(model, path, false);

@@ -150,6 +150,46 @@ namespace MyLeasing.Web.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("MyLeasing.Web.Data.Entities.Lessee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CellPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Document")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FixedPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Lessee");
+                });
+
             modelBuilder.Entity("MyLeasing.Web.Data.Entities.Owner", b =>
                 {
                     b.Property<int>("Id")
@@ -177,7 +217,7 @@ namespace MyLeasing.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProfilePictureUrl")
+                    b.Property<string>("PhotoUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
@@ -323,6 +363,15 @@ namespace MyLeasing.Web.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MyLeasing.Web.Data.Entities.Lessee", b =>
+                {
+                    b.HasOne("MyLeasing.Web.Data.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MyLeasing.Web.Data.Entities.Owner", b =>

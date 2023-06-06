@@ -28,6 +28,7 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -49,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @if (!string.IsNullOrEmpty(item.ProfilePictureUrl))
+                @if (!string.IsNullOrEmpty(item.PhotoUrl))
                 {
-                    <img src="@Url.Content(item.ProfilePictureUrl)" alt="Image" style="width: auto; height: 100px; max-width:100%" />
+                    <img src="@Url.Content(item.PhotoUrl)" alt="Image" style="width: auto; height: 100px; max-width:100%" />
                 }
             </td>
             <td>
