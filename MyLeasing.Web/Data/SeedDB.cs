@@ -49,27 +49,27 @@ namespace MyLeasing.Web.Data
 
             if (!_context.Owners.Any())
             {
-                AddOwner("Carlos",   "Barros Souza",   "R Miguel Bombarda 50",      "~/images/owners/1.jpeg",  user);
-                AddOwner("Igor",     "Pereira Sousa",  "R Pescador Bacalhoeiro 35", "~/images/owners/2.jpeg",  user);
-                AddOwner("Eduardo",  "Pinto Almeida",  "R Parque Gondarim 76",      "~/images/owners/3.jpeg",  user);
-                AddOwner("Matheus",  "Martins Souza",  "R Poeta João Ruiz 88",      "~/images/owners/4.jpeg",  user);
-                AddOwner("Diogo",    "Sousa Barbosa",  "R Outeirô 85",              "~/images/owners/5.jpeg",  user);
-                AddOwner("Courtney", "Kramer",         "3902 Douglas Dairy Road",   "~/images/owners/6.jpeg",  user);
-                AddOwner("Luana",    "Silva Cardoso",  "Rua Heróis Ultramar 26",    "~/images/owners/7.jpeg",  user);
-                AddOwner("Emily",    "Araujo Dias",    "R Cimo Vila 76",            "~/images/owners/8.jpeg",  user);
-                AddOwner("Sarah",    "Melo Goncalves", "Rua Marco Simões 109",      "~/images/owners/9.jpeg",  user);
-                AddOwner("Eduarda",  "Dias Costa",     "R Tradição 28",             "~/images/owners/10.jpeg", user);
+                AddOwner("Carlos",   "Barros Souza",   "R Miguel Bombarda 50",      "~/images/owners/1.jpg",  user);
+                AddOwner("Igor",     "Pereira Sousa",  "R Pescador Bacalhoeiro 35", "~/images/owners/2.jpg",  user);
+                AddOwner("Eduardo",  "Pinto Almeida",  "R Parque Gondarim 76",      "~/images/owners/3.jpg",  user);
+                AddOwner("Matheus",  "Martins Souza",  "R Poeta João Ruiz 88",      "~/images/owners/4.jpg",  user);
+                AddOwner("Diogo",    "Sousa Barbosa",  "R Outeirô 85",              "~/images/owners/5.jpg",  user);
+                AddOwner("Courtney", "Kramer",         "3902 Douglas Dairy Road",   "~/images/owners/6.jpg",  user);
+                AddOwner("Luana",    "Silva Cardoso",  "Rua Heróis Ultramar 26",    "~/images/owners/7.jpg",  user);
+                AddOwner("Emily",    "Araujo Dias",    "R Cimo Vila 76",            "~/images/owners/8.jpg",  user);
+                AddOwner("Sarah",    "Melo Goncalves", "Rua Marco Simões 109",      "~/images/owners/9.jpg",  user);
+                AddOwner("Eduarda",  "Dias Costa",     "R Tradição 28",             "~/images/owners/10.jpg", user);
 
                 await _context.SaveChangesAsync();
             }
 
             if (!_context.Lessees.Any())
             {
-                AddLessee("Pedro",  "Ferreira Gomes",   "R Riamar 50",       "~/images/lessees/1.jpeg", user);
-                AddLessee("Tomás",  "Martins Souza",    "Rua Longuinha 116", "~/images/lessees/2.jpeg", user);
-                AddLessee("Martim", "Santos Barbosa",   "R Cimo Vila 76",    "~/images/lessees/3.jpeg", user);
-                AddLessee("Laura",  "Correia Pinto",    "Quinta Lama 39",    "~/images/lessees/4.jpeg", user);
-                AddLessee("Bianca", "Ferreira Azevedo", "R Armazéns 97",     "~/images/lessees/5.jpeg", user);                
+                AddLessee("Pedro",  "Ferreira Gomes",   "R Riamar 50",       "~/images/lessees/1.jpg", user);
+                AddLessee("Tomás",  "Martins Souza",    "Rua Longuinha 116", "~/images/lessees/2.jpg", user);
+                AddLessee("Martim", "Santos Barbosa",   "R Cimo Vila 76",    "~/images/lessees/3.jpg", user);
+                AddLessee("Laura",  "Correia Pinto",    "Quinta Lama 39",    "~/images/lessees/4.jpg", user);
+                AddLessee("Bianca", "Ferreira Azevedo", "R Armazéns 97",     "~/images/lessees/5.jpg", user);                
 
                 await _context.SaveChangesAsync();
             }
